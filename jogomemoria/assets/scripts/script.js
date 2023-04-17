@@ -34,7 +34,7 @@ function initializeCards(cards) {
     cardElement.classList.add(CARD);
     cardElement.dataset.icon = card.icon;
 
-    cardElement.addEventListener'click,
+    cardElement.addEventListener('click', flipcard)
     gameBoard.appendChild(cardElement); 
 }
 
@@ -78,3 +78,4 @@ function createPairFromTech(tech) {
 function createIdWithTech(tech) {
   return tech + parseInt(Math.random() * 1000);
 }
+function flipCard()

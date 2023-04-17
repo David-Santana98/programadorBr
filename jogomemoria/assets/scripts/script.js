@@ -12,13 +12,18 @@ let techs= ['bootstrap',
 'node',
 'react'];
 
+createCardsFromTechs(techs);
 function createCardsFromTechs(techs) {
+    
     let cards = [];
 
     for(let tech of techs) {
         cards.push(createPairFromTech(tech));
     }
+
+    return cards.flatMap(pair => pair);
 }
+
 
 function createPairFromTech(tech) {
     
@@ -26,5 +31,12 @@ function createPairFromTech(tech) {
         id: createIdWithTech(tech),
         icon: tech,
         flipped: false,
-    }, {}]
+    }, { id: createIdWithTech(tech),
+        icon: tech,
+        flipped: false,}]
+}
+
+// criando o ID
+function createIdWithTech(tech) {
+    return tech + parseInt(Math.random() * 1000);
 }

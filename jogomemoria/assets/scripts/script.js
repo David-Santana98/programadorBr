@@ -34,9 +34,18 @@ function initializeCards(cards) {
     cardElement.classList.add(CARD);
     cardElement.dataset.icon = card.icon;
 
+    createCardContent(card, cardElement);
+
     cardElement.addEventListener('click', flipcard)
     gameBoard.appendChild(cardElement); 
+})
+
 }
+
+function createCardContent(card, cardElement){
+
+}
+
 
 function shuffleCards(cards) {
   let currentIndex = cards.length;

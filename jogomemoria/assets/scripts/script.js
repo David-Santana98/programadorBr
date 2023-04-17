@@ -1,5 +1,6 @@
 const FRONT = "card_front";
 const BACK = "card_back";
+const CARD = "card";
 
 let techs = [
   "bootstrap",
@@ -22,20 +23,20 @@ function startGame() {
   cards = createCardsFromTechs(techs);
   shuffleCards(cards);
   initializeCards(cards);
-
 }
-
 
 function initializeCards(cards) {
-  let gameBoard = document.getElementById("gameBoard")
+  let gameBoard = document.getElementById("gameBoard");
 
-    cards.forEach(card => {
+  cards.forEach((card) => {
+    let cardElement = document.createElement("div");
+    cardElement.id = card.id;
+    cardElement.classList.add(CARD);
+    cardElement.dataset.icon = card.icon;
 
-        let cardElement = document.createElement('div')
-        cardElement.id = card.id;
-    })
+    cardElement.addEventListener'click,
+    gameBoard.appendChild(cardElement); 
 }
-
 
 function shuffleCards(cards) {
   let currentIndex = cards.length;
@@ -55,9 +56,9 @@ function shuffleCards(cards) {
 function createCardsFromTechs(techs) {
   let cards = [];
 
- techs.forEach((tech) =>  {
+  techs.forEach((tech) => {
     cards.push(createPairFromTech(tech));
-  })
+  });
 
   return cards.flatMap((pair) => pair);
 }

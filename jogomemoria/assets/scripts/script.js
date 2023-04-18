@@ -44,6 +44,19 @@ function initializeCards(cards) {
 
 function createCardContent(card, cardElement){
 
+    createCardFace(FRONT, card, cardElement);
+    createCardFace(BACK, card, cardElement);
+}
+
+function createCardface(face, card, element) {
+
+    let cardElementFace = document.createElement('div');
+    cardElementFace.classList.add(face);
+    if(face === FRONT) {
+
+    }else {
+      cardElementFace.innerHTML = "&lt/&gt";
+    }
 }
 
 

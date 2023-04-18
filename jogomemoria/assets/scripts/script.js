@@ -5,7 +5,7 @@ const ICON = "icon";
 
 let techs = [
   "bootstrap",
-  "CSS",
+  "css",
   "electron",
   "firebase",
   "html",

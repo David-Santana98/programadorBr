@@ -1,6 +1,7 @@
 const FRONT = "card_front";
 const BACK = "card_back";
 const CARD = "card";
+const ICON = "icon";
 
 let techs = [
   "bootstrap",
@@ -36,29 +37,29 @@ function initializeCards(cards) {
 
     createCardContent(card, cardElement);
 
-    cardElement.addEventListener('click', flipcard)
-    gameBoard.appendChild(cardElement); 
-})
-
+    cardElement.addEventListener("click", flipcard);
+    gameBoard.appendChild(cardElement);
+  });
 }
 
-function createCardContent(card, cardElement){
-
-    createCardFace(FRONT, card, cardElement);
-    createCardFace(BACK, card, cardElement);
+function createCardContent(card, cardElement) {
+  createCardFace(FRONT, card, cardElement);
+  createCardFace(BACK, card, cardElement);
 }
 
 function createCardface(face, card, element) {
-
-    let cardElementFace = document.createElement('div');
-    cardElementFace.classList.add(face);
-    if(face === FRONT) {
-
-    }else {
-      cardElementFace.innerHTML = "&lt/&gt";
-    }
+  let cardElementFace = document.createElement("div");
+  cardElementFace.classList.add(face);
+  if (face === FRONT) {
+    let iconElement = document.createElement("img");
+    iconElement.classList.add(ICON);
+    iconElement.src = "./assetsimages/" + card.icon + ".png";
+    cardElementFace.appendChild(iconElement);
+  } else {
+    cardElementFace.innerHTML = "&lt/&gt";
+  }
+  element.appendChild(cardElementFace);
 }
-
 
 function shuffleCards(cards) {
   let currentIndex = cards.length;
@@ -100,4 +101,6 @@ function createPairFromTech(tech) {
 function createIdWithTech(tech) {
   return tech + parseInt(Math.random() * 1000);
 }
-function flipCard()
+function flipCard() {
+  this.classList.add("flip");
+}

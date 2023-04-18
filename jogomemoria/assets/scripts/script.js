@@ -25,19 +25,20 @@ function startGame() {
   shuffleCards(cards);
   initializeCards(cards);
 }
-
+// PEGA O MODELO DAS CARTAS E TRANFORMA EM VISUAL
 function initializeCards(cards) {
   let gameBoard = document.getElementById("gameBoard");
+  
 
   cards.forEach((card) => {
-    let cardElement = document.createElement("div");
+    let cardElement = document.createElement('div');
     cardElement.id = card.id;
     cardElement.classList.add(CARD);
     cardElement.dataset.icon = card.icon;
 
     createCardContent(card, cardElement);
 
-    cardElement.addEventListener("click", flipcard);
+    cardElement.addEventListener('click', flipCard);
     gameBoard.appendChild(cardElement);
   });
 }
@@ -47,13 +48,13 @@ function createCardContent(card, cardElement) {
   createCardFace(BACK, card, cardElement);
 }
 
-function createCardface(face, card, element) {
-  let cardElementFace = document.createElement("div");
+function createCardFace(face, card, element) {
+  let cardElementFace = document.createElement('div');
   cardElementFace.classList.add(face);
   if (face === FRONT) {
-    let iconElement = document.createElement("img");
+    let iconElement = document.createElement('img');
     iconElement.classList.add(ICON);
-    iconElement.src = "./assetsimages/" + card.icon + ".png";
+    iconElement.src = "./assets/images/" + card.icon + ".png";
     cardElementFace.appendChild(iconElement);
   } else {
     cardElementFace.innerHTML = "&lt/&gt";
@@ -61,6 +62,7 @@ function createCardface(face, card, element) {
   element.appendChild(cardElementFace);
 }
 
+//MODELO DE CARTAS EMBARALHADOS
 function shuffleCards(cards) {
   let currentIndex = cards.length;
   let randomIndex = 0;
@@ -83,7 +85,7 @@ function createCardsFromTechs(techs) {
     cards.push(createPairFromTech(tech));
   });
 
-  return cards.flatMap((pair) => pair);
+  return cards.flatMap((pair) => pair); // retorna as 20 cartas
 }
 
 function createPairFromTech(tech) {

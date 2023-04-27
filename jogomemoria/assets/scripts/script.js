@@ -7,7 +7,7 @@ startGame();
 
 function startGame() {
   cards = game.createCardsFromTechs();
-  initializeCards(cards);
+  initializeCards(game.cards);
 }
 
 // PEGA O MODELO DAS CARTAS E TRANFORMA EM VISUAL

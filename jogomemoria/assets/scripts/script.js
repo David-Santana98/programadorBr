@@ -3,21 +3,6 @@ const BACK = "card_back";
 const CARD = "card";
 const ICON = "icon";
 
-let techs = [
-  "bootstrap",
-  "css",
-  "electron",
-  "firebase",
-  "html",
-  "javascript",
-  "jquery",
-  "mongo",
-  "node",
-  "react",
-];
-
-let cards = null;
-
 startGame();
 
 function startGame() {
@@ -28,17 +13,16 @@ function startGame() {
 // PEGA O MODELO DAS CARTAS E TRANFORMA EM VISUAL
 function initializeCards(cards) {
   let gameBoard = document.getElementById("gameBoard");
-  
 
   cards.forEach((card) => {
-    let cardElement = document.createElement('div');
+    let cardElement = document.createElement("div");
     cardElement.id = card.id;
     cardElement.classList.add(CARD);
     cardElement.dataset.icon = card.icon;
 
     createCardContent(card, cardElement);
 
-    cardElement.addEventListener('click', flipCard);
+    cardElement.addEventListener("click", flipCard);
     gameBoard.appendChild(cardElement);
   });
 }
@@ -49,10 +33,10 @@ function createCardContent(card, cardElement) {
 }
 
 function createCardFace(face, card, element) {
-  let cardElementFace = document.createElement('div');
+  let cardElementFace = document.createElement("div");
   cardElementFace.classList.add(face);
   if (face === FRONT) {
-    let iconElement = document.createElement('img');
+    let iconElement = document.createElement("img");
     iconElement.classList.add(ICON);
     iconElement.src = "./assets/images/" + card.icon + ".png";
     cardElementFace.appendChild(iconElement);

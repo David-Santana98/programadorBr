@@ -23,7 +23,7 @@ let game = {
 
     this.cards = this.cards.flatMap((pair) => pair); // retorna as 20 cartas
     this.shuffleCards();
-    // return this.cards
+    return this.cards;
   },
 
   createPairFromTech: function (tech) {

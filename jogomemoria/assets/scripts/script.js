@@ -6,15 +6,15 @@ const ICON = "icon";
 startGame();
 
 function startGame() {
-  cards = game.createCardsFromTechs();
-  initializeCards(game.cards);
+ 
+  initializeCards(game.createCardsFromTechs());
 }
 
 // PEGA O MODELO DAS CARTAS E TRANFORMA EM VISUAL
 function initializeCards(cards) {
   let gameBoard = document.getElementById("gameBoard");
 
-  cards.forEach((card) => {
+ game.cards.forEach((card) => {
     let cardElement = document.createElement("div");
     cardElement.id = card.id;
     cardElement.classList.add(CARD);

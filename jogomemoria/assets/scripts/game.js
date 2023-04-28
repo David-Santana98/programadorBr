@@ -1,37 +1,33 @@
-
 let game = {
-
   lockMode: false,
   firstCard: null,
-  secondCard:null,
+  secondCard: null,
 
   setCard: function (id) {
+    let card = this.cards.filter((cards) => cards.id === id)[0];
 
-    let card = this.cards.filter(cards => cards.id===id)[0];
-
-    if(card.flipped || this.lockMode) {
+    if (card.flipped || this.lockMode) {
       return false;
     }
 
-    if(!this.firstCard) {
+    if (!this.firstCard) {
       this.firstCard = card;
       return true;
-    }else {
+    } else {
       this.secondCard = card;
       this.lockMode = true;
       return true;
     }
-
   },
 
-  checkMatch: function() {
+  checkMatch: function () {
     return this.firstCard.icon === this.secondCard.icon;
   },
 
-  clearCards: function() {
-      this.firstCard = null;
-      this.secondCard == null;
-      this.lockMode = false;
+  clearCards: function () {
+    this.firstCard = null;
+    this.secondCard == null;
+    this.lockMode = false;
   },
 
   techs: [

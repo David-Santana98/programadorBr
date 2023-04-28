@@ -1,4 +1,9 @@
+
 let game = {
+
+  lockMode: false,
+
+
   techs: [
     "bootstrap",
     "css",

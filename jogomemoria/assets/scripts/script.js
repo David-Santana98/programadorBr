@@ -6,7 +6,6 @@ const ICON = "icon";
 startGame();
 
 function startGame() {
- 
   initializeCards(game.createCardsFromTechs());
 }
 
@@ -14,7 +13,7 @@ function startGame() {
 function initializeCards(cards) {
   let gameBoard = document.getElementById("gameBoard");
 
- game.cards.forEach((card) => {
+  game.cards.forEach((card) => {
     let cardElement = document.createElement("div");
     cardElement.id = card.id;
     cardElement.classList.add(CARD);
@@ -46,11 +45,6 @@ function createCardFace(face, card, element) {
   element.appendChild(cardElementFace);
 }
 
-
-
-  function flipCard() {
-    this.classList.add("flip");
-  }
-
-
-
+function flipCard() {
+  this.classList.add("flip");
+}

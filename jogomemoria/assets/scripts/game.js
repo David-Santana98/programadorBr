@@ -5,6 +5,12 @@ let game = {
   firstCard: null,
   secondCard:null,
 
+  setCard: function (id) {
+
+    this.cards.filter(cards => cards.id ===id)[0];
+
+  },
+
 
   techs: [
     "bootstrap",

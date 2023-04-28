@@ -7,7 +7,20 @@ let game = {
 
   setCard: function (id) {
 
-    this.cards.filter(cards => cards.id===id)[0];
+    let card = this.cards.filter(cards => cards.id===id)[0];
+
+    if(card.flipped || this.lockMode) {
+      return false;
+    }
+
+    if(!this.firstCard) {
+      this.firstCard = card;
+      return true;
+    }else {
+      this.secondCard = card;
+      this.lockMode = true;
+      return true;
+    }
 
   },
 

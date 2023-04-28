@@ -46,5 +46,9 @@ function createCardFace(face, card, element) {
 }
 
 function flipCard() {
+
+  if (game.setCard(this.id)){
+
   this.classList.add("flip");
+}
 }

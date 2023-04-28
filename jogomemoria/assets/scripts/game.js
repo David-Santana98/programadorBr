@@ -41,6 +41,10 @@ let game = {
     this.clearCards();
   },
 
+  checkGameOver() {
+    
+  }
+
   techs: [
     "bootstrap",
     "css",

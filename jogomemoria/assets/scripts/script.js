@@ -12,7 +12,7 @@ function startGame() {
 // PEGA O MODELO DAS CARTAS E TRANFORMA EM VISUAL
 function initializeCards(cards) {
   let gameBoard = document.getElementById("gameBoard");
-
+  gameBoard.innerHTML = '';
   game.cards.forEach((card) => {
     let cardElement = document.createElement("div");
     cardElement.id = card.id;
@@ -73,6 +73,6 @@ function flipCard() {
 function restart() {
   game.clearCards(); 
   startGame();
-  let gameOverLayer = documet.getElementById("gameOver");
+  let gameOverLayer = document.getElementById("gameOver");
   gameOverLayer.style.display ='none'
 }

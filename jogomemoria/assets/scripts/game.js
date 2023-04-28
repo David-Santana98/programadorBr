@@ -26,7 +26,7 @@ let game = {
 
   clearCards: function () {
     this.firstCard = null;
-    this.secondCard == null;
+    this.secondCard = null;
     this.lockMode = false;
   },
 

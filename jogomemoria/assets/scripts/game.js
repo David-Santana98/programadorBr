@@ -2,6 +2,8 @@
 let game = {
 
   lockMode: false,
+  firstCard: null,
+  secondCard:null,
 
 
   techs: [

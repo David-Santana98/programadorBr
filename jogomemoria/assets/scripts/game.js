@@ -7,7 +7,7 @@ let game = {
 
   setCard: function (id) {
 
-    this.cards.filter(cards => cards.id ===id)[0];
+    this.cards.filter(cards => cards.id===id)[0];
 
   },
 

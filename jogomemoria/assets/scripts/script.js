@@ -50,5 +50,6 @@ function flipCard() {
   if (game.setCard(this.id)){
 
   this.classList.add("flip");
+  game.checkMarch();
 }
 }

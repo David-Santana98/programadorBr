@@ -28,6 +28,11 @@ let game = {
     return this.firstCard.icon === this.secondCard.icon;
   },
 
+  clearCards: function() {
+      this.firstCard = null;
+      this.secondCard == null;
+      this.lockMode = false;
+  },
 
   techs: [
     "bootstrap",

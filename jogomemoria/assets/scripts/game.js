@@ -24,6 +24,10 @@ let game = {
 
   },
 
+  checkMatch: function() {
+    return this.firstCard.icon === this.secondCard.icon;
+  },
+
 
   techs: [
     "bootstrap",
